@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikinita - Belanja Mudah & Terpercaya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #ff9800;
+      --secondary-color: #ffb74d;
+      --dark-color: #2c3e50;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white !important;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #ff9800 0%, #ffb74d 100%);
+      color: white;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.2s;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-custom {
+      background: white;
+      color: var(--primary-color);
+      padding: 12px 40px;
+      border-radius: 50px;
+      font-weight: bold;
+      border: none;
+      transition: all 0.3s;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      background: #f8f9fa;
+    }
+
+    .product-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      margin-bottom: 30px;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.1);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #e53935;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 80px 0;
+    }
+
+    footer {
+      background: var(--dark-color);
+      color: white;
+      padding: 40px 0;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--secondary-color);
+      transform: translateY(-5px);
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><i class="fas fa-store"></i> Nikinita</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-content">
+          <h1 class="hero-title">Selamat Datang di Nikinita!</h1>
+          <p class="hero-subtitle">Temukan kebutuhan pokok Anda dengan harga terbaik. Belanja mudah, cepat, dan terpercaya.</p>
+          <button class="btn btn-custom btn-lg"><i class="fas fa-shopping-cart"></i> Belanja Sekarang</button>
+        </div>
+        <div class="col-lg-6 text-center">
+          <i class="fas fa-shopping-bag" style="font-size: 15rem; opacity: 0.3;"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produk Unggulan -->
+  <section class="py-5" id="produk">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Produk Unggulan</h2>
+      <div class="row">
+        <!-- Beras -->
+        <div class="col-md-4">
+          <div class="card product-card">
+            <div class="position-relative product-img">
+              <img src="https://images.unsplash.com/photo-1605478561114-3e1d3e6de31c?auto=format&fit=crop&w=800&q=80" alt="Beras Premium">
+              <span class="product-badge">TERLARIS</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Beras Premium 5kg</h5>
+              <p class="text-muted">Beras pulen berkualitas tinggi</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h5 mb-0 text-danger fw-bold">Rp 78.000</span>
+                <button class="btn btn-sm btn-outline-danger">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Minyak -->
+        <div class="col-md-4">
+          <div class="card product-card">
+            <div class="position-relative product-img">
+              <img src="https://images.unsplash.com/photo-1615486366800-9e89e665a7e9?auto=format&fit=crop&w=800&q=80" alt="Minyak Goreng">
+              <span class="product-badge">TERLARIS</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Minyak Goreng 2L</h5>
+              <p class="text-muted">Minyak goreng kemasan isi 2 liter</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h5 mb-0 text-danger fw-bold">Rp 33.000</span>
+                <button class="btn btn-sm btn-outline-danger">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gula -->
+        <div class="col-md-4">
+          <div class="card product-card">
+            <div class="position-relative product-img">
+              <img src="https://images.unsplash.com/photo-1590080875837-49c89e63e1af?auto=format&fit=crop&w=800&q=80" alt="Gula Pasir">
+              <span class="product-badge">TERLARIS</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Gula Pasir 1kg</h5>
+              <p class="text-muted">Gula putih murni kualitas premium</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h5 mb-0 text-danger fw-bold">Rp 17.000</span>
+                <button class="btn btn-sm btn-outline-danger">Lihat Detail</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="tentang">
+    <div class="container text-center">
+      <h2 class="display-4 fw-bold mb-4">Siap Berbelanja?</h2>
+      <p class="lead mb-4">Bergabunglah dengan ribuan pelanggan yang puas dengan layanan kami!</p>
+      <button class="btn btn-light btn-lg px-5 py-3"><i class="fas fa-rocket"></i> Mulai Belanja</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="kontak">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold mb-3"><i class="fas fa-store"></i> Nikinita</h5>
+          <p>Toko online terpercaya untuk segala kebutuhan pokok Anda dengan pelayanan terbaik.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold mb-3">Kontak Kami</h5>
+          <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+          <p><i class="fas fa-envelope"></i> info@nikinita.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Surabaya, Indonesia</p>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.148513237044!2d112.73782677499786!3d-7.339623172184091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbf74f62aef9%3A0x2e23a1e9b44b6b6c!2sSurabaya%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+            allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold mb-3">Ikuti Kami</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.1);">
+      <div class="text-center">
+        <p>&copy; 2025 Nikinita. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
